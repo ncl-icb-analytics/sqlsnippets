@@ -35,6 +35,11 @@ This is a python module adding a standard set of functions to interact with the 
 C:\Users\{USERNAME}\AppData\Local\Programs\Python\Python311\Lib\site-packages\ncl\sqlsnippets
 ```
 
+* Install pandas and SQLAlchemy. Can be done with the requirements file:
+```
+pip install -r requirements.txt
+```
+
 ## Standard Use
 
 * In your other python and notebook files you can add the sqlsnippets module like any other standard module.
