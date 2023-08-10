@@ -20,6 +20,15 @@ def connect_to_sql (conn_str):
 
     return engine
 
+#Function that wraps the basic connection functions and returns the engine
+def create_engine (server_address, database):
+
+    #Get the connection string
+    conn_str = get_connection_string (server_address, database)
+
+    #Create the engine and return it
+    return connect_to_sql (conn_str)
+
 #Take provided data and upload it to MSSQL
 def upload_to_sql (data, engine, table, schema, replace, chunks=100, dtypes={}):
 
