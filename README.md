@@ -5,11 +5,13 @@ This is a python module adding a standard set of functions to interact with the 
 - [NCL SQLSnippets](#ncl-sqlsnippets)
   - [History](#history)
     - [\[1.0\] - 10/07/2023](#10---10072023)
+    - [\[1.1\] - 10/08/2023](#11---10082023)
   - [Installation](#installation)
   - [Standard Use](#standard-use)
   - [Functions](#functions)
     - [get\_connection\_string](#get_connection_string)
     - [connect\_to\_sql](#connect_to_sql)
+    - [create\_engine](#create_engine)
     - [upload\_to\_sql](#upload_to_sql)
     - [list\_all\_tables](#list_all_tables)
     - [table\_exists](#table_exists)
@@ -26,6 +28,9 @@ This is a python module adding a standard set of functions to interact with the 
 ### [1.0] - 10/07/2023 ###
 * Initial set of functions
 * Instructions for installing as a module
+
+### [1.1] - 10/08/2023 ###
+* Added create_engine function
 
 ## Installation
 
@@ -72,6 +77,7 @@ get_connection_string (server_addres, database, server_type="mssql", driver="SQL
 Returns a connection string for the sandpit.
 
 **Parameters:**
+
 * **server_address**: _str_ \
 The server name of the database. It can be found in the Connect to Server pop-up when openning MS SQL Server Management Studio.
 
@@ -93,7 +99,7 @@ Connection string to establish the connection in the connect_to_sql function.
 ```python
 connect_to_sql (conn_str)
 ```
-Takes a connection string and returns a connection to the database in the form of an engine.
+Takes a connection string and returns a connection to the database in the form of an engine. 
 
 **Parameters:**
 
@@ -102,6 +108,21 @@ Connection string.
 
 **Returns**: _engine_ \
 Connection to the database. Store this in a variable and use it as a parameter in the other sqlsnippets functions.
+
+
+
+### create_engine
+```
+create_engine (server_address, database)
+```
+Wrapper for the main connection functions. Returns the engine connection object.
+
+**Parameters:**
+* **server_address**: _str_ \
+The server name of the database. It can be found in the Connect to Server pop-up when openning MS SQL Server Management Studio.
+
+* **database**: _str_ \
+Name of the database. 
 
 
 
