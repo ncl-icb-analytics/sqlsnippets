@@ -11,7 +11,7 @@ This is a python module adding a standard set of functions to interact with the 
   - [Functions](#functions)
     - [get\_connection\_string](#get_connection_string)
     - [connect\_to\_sql](#connect_to_sql)
-    - [create\_engine](#create_engine)
+    - [connect](#connect)
     - [upload\_to\_sql](#upload_to_sql)
     - [list\_all\_tables](#list_all_tables)
     - [table\_exists](#table_exists)
@@ -30,7 +30,7 @@ This is a python module adding a standard set of functions to interact with the 
 * Instructions for installing as a module
 
 ### [1.1] - 10/08/2023 ###
-* Added create_engine function
+* Added connect function
 
 ## Installation
 
@@ -111,9 +111,9 @@ Connection to the database. Store this in a variable and use it as a parameter i
 
 
 
-### create_engine
+### connect
 ```
-create_engine (server_address, database)
+connect (server_address, database)
 ```
 Wrapper for the main connection functions. Returns the engine connection object.
 
