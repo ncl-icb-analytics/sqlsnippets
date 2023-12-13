@@ -40,7 +40,7 @@ This is a python module adding a standard set of functions to interact with the 
 
 * As of v1.2.0 the sql snippets module can be install through pip
 ```
-pip install -r ncl_sqlsnippets
+pip install ncl_sqlsnippets
 ```
 
 ## Standard Use
