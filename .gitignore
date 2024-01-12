@@ -10,3 +10,4 @@
 
 # Exclude pycache
 /__pycache__/
+/devtesting/
