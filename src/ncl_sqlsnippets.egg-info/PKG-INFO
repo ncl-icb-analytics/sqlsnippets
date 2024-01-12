@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ncl-sqlsnippets
-Version: 1.2.3
+Version: 1.2.4
 Summary: Module containing standard python functions to interact with the sandpit
 Author-email: Jake Kealey <jake.kealey@nhs.net>
 Project-URL: Homepage, https://github.com/ncl-icb-analytics/sqlsnippets
@@ -11,8 +11,8 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: pandas==2.1.4
-Requires-Dist: SQLAlchemy==2.0.5.post1
+Requires-Dist: pandas>=2.1.4
+Requires-Dist: SQLAlchemy>=2.0.5.post1
 
 # NCL SQLSnippets
 
