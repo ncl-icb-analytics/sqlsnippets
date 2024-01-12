@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 import pandas as pd
 
 #Builds connect string, given database details
@@ -175,6 +176,7 @@ def execute_query (engine, query):
         # Execute a query
         connection.execute(text(query))
 
+        
         #Commit to reflect changes
         connection.commit()
 
@@ -194,3 +196,17 @@ def execute_sfw (engine, query):
 
     # Create a pandas DataFrame from the rows and columns
     return pd.DataFrame(rows, columns=columns)
+
+#Create a session (for manual commits)
+def generate_session(engine):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session, session.begin()
+
+#Execute a non-sfw query for a given session
+def execute_query_session (query, session):
+    session.execute(text(query))
+
+#Force commit after batch changes
+def commit_changes(transaction):
+    transaction.commit()
