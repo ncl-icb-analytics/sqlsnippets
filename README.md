@@ -7,6 +7,7 @@ This is a python module adding a standard set of functions to interact with the 
     - [\[1.0\] - 10/07/2023](#10---10072023)
     - [\[1.1\] - 10/08/2023](#11---10082023)
     - [\[1.2\] - 06/12/2023](#12---06122023)
+    - [\[1.3\] - 12/01/2024](#13---12012024)
   - [Installation](#installation)
   - [Standard Use](#standard-use)
   - [Functions](#functions)
@@ -22,6 +23,9 @@ This is a python module adding a standard set of functions to interact with the 
     - [columns\_exist](#columns_exist)
     - [execute\_query](#execute_query)
     - [execute\_sfw](#execute_sfw)
+    - [generate\_session](#generate_session)
+    - [execute\_query\_session](#execute_query_session)
+    - [commit\_changes](#commit_changes)
   - [License](#license)
 
 
@@ -35,6 +39,10 @@ This is a python module adding a standard set of functions to interact with the 
 
 ### [1.2] - 06/12/2023 ###
 * Converted to project (https://pypi.org/project/ncl-sqlsnippets/1.2.0/)
+
+### [1.3] - 12/01/2024 ###
+* Added functionality for manual commits through new functions
+* generate_session, execute_query_session, commit_changes functions added
 
 ## Installation
 
@@ -326,6 +334,49 @@ The query to execute as a string
 The query result is returned as a pandas data frame.
 
 
+
+### generate_session
+```
+session, transaction = generate_session(engine)
+```
+Generates a session object. Non-sfw queries can be executed with it without auto-committing the result.
+
+**Parameters:**
+
+* **engine**: _engine_ \
+Engine object from the connect_to_sql function.
+
+**Returns**: _Session_, _Transaction_ \
+The generated session along with a transaction object are returned
+
+
+
+### execute_query_session
+```
+execute_query_session(query, session)
+```
+Executes a non-sfw query. This will not commit changes.
+
+**Parameters:**
+
+* **query**: _str_ \
+SQL query command as string
+
+* **session**: _session_ \
+Session object from the generate_session function.
+
+
+
+### commit_changes
+```
+commit_changes(transaction)
+```
+Commits changes made during a session.
+
+**Parameters:**
+
+* **transaction**: _transaction_ \
+Transaction object from the generate_session function.
 
 ## License
 This repository is dual licensed under the [Open Government v3](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) & MIT. All code can outputs are subject to Crown Copyright.
